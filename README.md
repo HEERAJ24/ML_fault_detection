@@ -1,111 +1,98 @@
-# ML_fault_detection
-Automated Solder Fault Detection in Electronic Manufacturing using Machine Learning Techniques
+Title: Automated Solder Fault Detection in Electronic Manufacturing Using ML Techniques
 
 Abstract:
-  The manufacturing of electronic components requires meticulous attention to detail and stringent quality control measures. Solder fault detection is a critical aspect of this process, as it significantly impacts the performance and reliability of the final product. Traditional methods for solder fault detection are time-consuming and may not be effective for complex and miniaturized components. In recent years, machine learning has emerged as a promising solution to this challenge. This paper presents an automated solder fault detection system using machine learning techniques. We leverage popular libraries such as PyTorch, scikitlearn, and TensorFlow to develop a system that can accurately and efficiently detect solder faults. We conduct a comparative analysis of different machine learning algorithms, including random forest, neural network, and support vector machines, to determine the most effective approach. The results demonstrate the potential of machine learning in enhancing the manufacturing process, leading to higher quality products and increased customer satisfaction. This paper provides valuable insights into the application of machine learning in quality assurance for electronic manufacturing and sets the foundation for future research in this field.
+Machine learning (ML) is revolutionizing electronic manufacturing's quality control. Our paper explores an ML-based automated solder fault detection system using PyTorch, scikit-learn, and TensorFlow. We analyze various ML algorithms such as random forest, neural network, and support vector machines for effective fault detection. Our findings emphasize ML's potential in enhancing manufacturing, ensuring high-quality products, and increasing customer satisfaction.
 
 Introduction:
-  The detection of solder joint faults in electronic manufacturing is of utmost importance to ensure product quality and reliability. Traditional methods of solder joint inspection often rely on manual visual inspection, which can be time-consuming, subjective, and prone to human error. With the advancement of machine learning techniques and the availability of temperature datasets, there is a growing interest in using machine learning algorithms for solder fault detection.
-  Machine learning algorithms have shown great potential in various domains, including image recognition, natural language processing, and anomaly detection. These algorithms have the ability to learn patterns and characteristics from large datasets, enabling them to make accurate predictions and classifications. Applying machine learning techniques to solder fault detection can significantly improve the efficiency and accuracy of the inspection process.
-  Temperature datasets play a crucial role in solder fault detection as temperature variations can indicate potential solder joint defects. When a faulty solder joint exists, it can result in abnormal heat dissipation, leading to temperature deviations in the vicinity of the joint. By leveraging temperature datasets obtained from sensors or thermal imaging devices, machine learning algorithms can learn to detect and classify these temperature anomalies, thereby identifying solder joint faults.
-  The objective of this project report is to explore the application of machine learning techniques for solder fault detection using temperature datasets. We aim to develop a reliable and efficient system that can automate the detection process and provide accurate predictions of solder joint defects. By leveraging the power of machine learning, we can enhance the overall quality control in electronic manufacturing, reduce human effort, and minimize the production of defective products.
-  The report will present an overview of the existing literature on solder joint inspection methods, with a specific focus on machine learning techniques and their applications in fault detection. We will discuss the significance of temperature datasets in solder fault detection and the potential challenges associated with their utilization. Furthermore, we will describe the methodology employed in this project, including data preprocessing, feature extraction, and the selection of machine learning algorithms.
-  To evaluate the performance of our proposed approach, we will conduct experiments using real-world temperature datasets collected from soldering processes. We will compare the results of different machine learning algorithms and assess their effectiveness in identifying solder joint faults. Additionally, we will discuss the limitations and potential future improvements of the proposed system.
-  In conclusion, the application of machine learning techniques in solder fault detection using temperature datasets holds great promise in improving the efficiency and accuracy of quality control in electronic manufacturing. By automating the detection process and leveraging temperature variations as indicators of potential defects, we can enhance the reliability and performance of electronic systems. This project report aims to contribute to the existing body of knowledge in this field and provide insights for further advancements in solder fault detection using machine learning techniques.
+Traditional solder fault detection methods in electronic manufacturing are time-consuming and prone to errors. We're leveraging ML algorithms and temperature datasets to enhance solder fault detection accuracy. Temperature variations can indicate faulty joints, making them crucial indicators for ML-based defect detection systems.
 
 Crack Formation in Power Semiconductors During Repetitive Thermal Cycling:
-  Power semiconductors are prone to a common fault known as crack formation within the solder layer that connects the lead frame of the device to the printed circuit board (PCB). Repetitive thermal cycling exacerbates this issue, impacting the heat flow from the chip through the lead frame and the PCB. As a result, changes in temperature readings obtained from sensors placed near the device can be expected. Detecting crack growth before electrical faults occur is crucial to ensuring reliable operation. However, existing methods face challenges related to numerical difficulties, the monitoring of junction temperature (TJ ), limited access to temperature-sensitive electrical parameters, and inadequate computational resources. This literature review provides an overview of the current research on crack formation in power semiconductors and explores potential improvements to crack detection methods.
-
-Crack Formation and Heat Dissipation:
-  Cracks within the solder layer of power semiconductors commonly arise during repetitive thermal cycling. These cracks impede the efficient dissipation of heat from the chip through the lead frame and the PCB, which negatively affects the overall thermal performance of the device. Consequently, the temperature measurements obtained from nearby sensors may exhibit variations. Therefore, early detection of crack formation is essential to prevent potential electrical faults and ensure optimal thermal management.
+Repetitive thermal cycling causes cracks in solder layers of power semiconductors, impacting heat dissipation. Early crack detection is crucial to prevent electrical faults. Existing methods face challenges in monitoring junction temperature and accessing temperature-sensitive parameters.
 
 Structure Function Analysis:
-  Several publications have investigated the use of structure function analysis to extract valuable information from the transient thermal response of power semiconductors. However, this method faces several challenges. The de-convolution process employed in structure function analysis often encounters numerical difficulties, limiting its practical implementation. Moreover, the effectiveness of this method relies on the accurate monitoring of junction temperature (TJ ). Unfortunately, many semiconductors lack on-chip temperature sensors, making TJ measurement infeasible. Additionally, accessing temperature-sensitive electrical parameters, such as the voltage at a body diode, is often not possible. These limitations restrict the widespread application of structure function analysis for crack detection in power semiconductors. 
-  In addition to the aforementioned challenges, the computational resources required for structure function analysis may not be available in many onboard control units. The complex calculations and data processing involved in this method demand significant computational power. Consequently, implementing structure function analysis for crack detection becomes impractical in systems with limited computational capabilities. 
-  Crack formation within the solder layer connecting the lead frame of power semiconductors to the PCB during repetitive thermal cycling is a common fault that poses significant challenges. Although structure function analysis has shown promise in crack detection, issues related to numerical difficulties, junction temperature monitoring, and accessing temperature-sensitive
-electrical parameters limit its applicability. Furthermore, the computational resources required for this method are often unavailable in onboard control units. Future research should focus on developing alternative techniques that address these challenges, enabling efficient and reliable crack detection in power semiconductors. Such advancements will contribute to the optimal operation of electronic systems, ensuring enhanced reliability and performance.
+Structure function analysis can detect crack formation in power semiconductors but faces numerical difficulties and resource limitations. Its complex calculations make implementation in onboard control units impractical. Future research should focus on alternative techniques.
 
-Machine learning techniques and applications in fault detection:
-  The application of Machine Learning in the detection of faults in solder joints offers numerous benefits, including automation, improved accuracy, scalability, and cost reduction. As the manufacturing industry continues to evolve, the adoption of such advanced technologies will be crucial in maintaining competitiveness and enhancing operational efficiency. Using machine learning algorithms for solder fault detection offers several advantages:
-  a) Automation: Machine learning models automate the fault detection process, reducing human effort and the associated costs. Once trained, the models can analyze large volumes of data in a short time, improving overall efficiency. 
-  The traditional method of fault detection in solder joints involves manual inspection, which is time-consuming and prone to human error. ML models, once trained, automate this process, significantly reducing human effort and associated costs. These models can analyze large volumes of data in a short time, thereby improving overall efficiency. Automation also ensures consistent quality control, as the models do not suffer from fatigue or loss of concentration, unlike human operators.
-  b) Improved Accuracy: Machine learning algorithms can identify subtle patterns and characteristics that are difficult for human operators to detect. This enables the models to achieve higher accuracy rates in distinguishing between faulty and non-faulty solder joints.
-ML algorithms have the ability to identify subtle patterns and characteristics that are difficult for human operators to detect. This capability enables the models to achieve higher accuracy rates in distinguishing between faulty and non-faulty solder joints. The use of ML algorithms also reduces the risk of false positives and negatives, ensuring that faulty joints are accurately identified and addressed.
-  c) Scalability: ML algorithms can be easily scaled up or down depending on the size and complexity of the data. This flexibility allows the models to adapt to different manufacturing scenarios, accommodating varying levels of complexity and production volumes.
-  One of the key advantages of ML algorithms is their scalability. They can be easily scaled up or down depending on the size and complexity of the data. This flexibility allows the models to adapt to different manufacturing scenarios, accommodating varying levels of complexity and production volumes. As a result, ML models can be effectively used in both small-scale and large-scale manufacturing operations.
-  d) Reduced Costs: By automating the fault detection process and minimizing the need for manual inspection, machine learning algorithms help reduce costs associated with labor, rework, and scrap. This leads to improved productivity and increased profitability for manufacturing operations.
-  By automating the fault detection process and minimizing the need for manual inspection, ML algorithms help reduce costs associated with labor, rework, and scrap. This leads to improved productivity and increased profitability for manufacturing operations. Moreover, the early detection of faults prevents the production of defective products, thereby saving costs associated with rework and warranty claims.
+Machine Learning Techniques and Applications in Fault Detection:
+ML offers automation, accuracy, scalability, and cost reduction benefits. ML models automate fault detection, improve accuracy, ensure scalability, and reduce costs compared to traditional manual inspection methods.
 
-Methodology:
-  The methodology section explains the machine learning techniques used in the project, including the use of different libraries and a comparative analysis of various algorithms. It also describes the datasets and evaluation metrics used. 
-  This methodology aims to provide a comprehensive approach to solder fault detection using machine learning algorithms implemented in popular frameworks such as PyTorch, scikitlearn (sklearn), and TensorFlow. These frameworks offer a wide range of tools and functionalities that facilitate the development and deployment of machine learning models. 
-  The overall workflow of this methodology involves several key steps. Firstly, the dataset containing sensor data from solder joints is collected. This dataset serves as the foundation for training and evaluating the machine learning models. Various sources, such as inspection systems or simulated data, can contribute to the dataset. 
-  The measurement dataset refers to the data that was originally gathered from testing 105 MOSFETs or semiconductor devices. During the testing process, short power pulses were applied to the devices, and the measurements of four temperature sensors were recorded over a defined timespan. Additionally, this dataset includes samples with 8-10 different solder faults, which vary in size and arrangement. 
-  On the other hand, the simulation dataset consists of data generated through simulations performed in a specific software environment. Initially, around 10,500 simulations were conducted. However, in order to create a more balanced dataset with regards to the junction temperature and fault percentage of each diode, the dataset was reduced to 6,605 samples. 
-  By combining both the measurement and simulation datasets, the aim is to develop machine learning models that can effectively predict properties or characteristics of unknown data. These models leverage the information extracted from real-world measurements and the insights gained from the simulated data to make accurate predictions.
+This abridged version captures the main points of your original text in a concise manner.
 
-Preprocessing:
-  The next step involves data preprocessing and feature extraction for temperature data. This process includes several steps:
 
-Methodology:
-1. Data Cleaning: Perform data cleaning procedures to handle missing values, outliers, and noise. Missing values can be imputed using techniques such as mean imputation interpolation. Outliers and noise can be addressed by smoothing techniques or filtering methods suitable for temperature data.
-2. Feature Extraction: Extract meaningful features from the temperature data to capture relevant information for solder fault detection. Feature extraction can be performed using various statistical measures such as mean, standard deviation, minimum, maximum, or percentile values.
-3. Data Normalization: Normalize the temperature data to a common scale to ensure that features with different scales do not dominate the learning process. Common normalization techniques include min-max scaling or standardization, which transform the data to a specific range or distribution with zero mean and unit variance.
-4. Feature Selection: If the dimensionality of the extracted features is high, apply feature selection techniques to identify the most relevant features for solder fault detection. Methods like correlation analysis, mutual information, or feature importance rankings from machine learning models can guide the selection process.
-5. Train-Validation-Test Split: Divide the preprocessed and feature-extracted dataset into training, validation, and testing sets. The training set is used for model training, the validation set helps in hyperparameter tuning and model selection, and the testing set evaluates the final model’s performance.
-  After preprocessing and feature extraction, the dataset is split into training, validation, and testing sets. The training set is used to train the machine learning models, while the validation set assists in tuning hyperparameters and preventing overfitting. The testing set is utilized to assess the generalization performance of the trained models.
+The methodology focuses on solder fault detection via machine learning techniques, utilizing PyTorch, scikit-learn, and TensorFlow. It involves:
 
-Optimizing Machine Learning Algorithms for Solder Fault Detection:
-  Once the datasets are prepared, the next step involves selecting and training machine learning models. Popular algorithms such as decision trees, random forests, support vector machines (SVM), or neural networks can be employed for solder fault detection. These models learn patterns and relationships from the training data to make predictions on unseen data.
-Let us look into all the various algorithms used in the project work.
-
+Data Collection: Acquiring sensor data from solder joints sourced from real devices and simulations.
+Preprocessing: Handling missing values, outliers, and noise; extracting relevant features; normalizing data; selecting significant features; and splitting data into training, validation, and test sets.
+Algorithm Selection: Utilizing algorithms like Decision Tree Classifier and Support Vector Machines for fault detection.
 Decision Tree Classifier:
-• Data preparation: Prepare the dataset by encoding categorical variables and splitting it into a feature matrix X and a corresponding target vector y, where X contains the input features and y contains the corresponding class labels.
-• Tree building: The algorithm starts with the entire dataset at the root node of the tree. It evaluates different features and splits the data into subsets based on the feature that provides the most significant information gain The process continues recursively for each subset, creating child nodes and splitting the data until a stopping criterion is met.
-• Stopping criteria: The tree-growing process stops when one of the following conditions is met:
-• All data points in a node belong to the same class, so there is no need for further splitting.
-• The maximum depth of the tree is reached.
-• The number of data points in a node falls below a predefined threshold.
-• The improvement in impurity or information gain is below a specified threshold.
-• Handling categorical and continuous features: The algorithm can handle both categorical and continuous features. For categorical features, it evaluates each possible value as a potential split. For continuous features, it tries different threshold values to find the optimal split.
-• Prediction: To make predictions on new, unseen data, the algorithm traverses the decision tree by evaluating the feature tests at each internal node. It follows the appropriate branch based on the feature values of the input data until it reaches a leaf node, which provides the predicted class label for the input 
 
+Data preparation: Encoding variables and splitting data into feature matrix X and target vector y.
+Tree building: Evaluating features for data split until stopping criteria are met.
+Handling features: Managing both categorical and continuous features; predicting class labels.
 Support Vector Machines(SVM):
-• Data preparation: Prepare the dataset by splitting it into a feature matrix X and a corresponding target vector y, where X contains the input features and y contains the corresponding class labels.
-• Feature standardization: Standardize the feature values to ensure that each feature contributes equally to the SVM training process. This step involves scaling the features to have zero mean and unit variance.
-• Hyperplane construction: The algorithm aims to find an optimal hyperplane that maximally separates the data points of different classes. The hyperplane is defined as the decision boundary that best separates the classes in the feature space.
-• Margin maximization: SVM seeks to maximize the margin, which is the distance between the decision boundary and the closest data points from each class. The points that lie on the margin are called support vectors, as they define the position and orientation of the decision boundary.
-• Kernel trick: The SVM algorithm can handle nonlinear decision boundaries by transforming the input features into a higher-dimensional feature space using a kernel function. This transformation allows the algorithm to implicitly operate in a high- dimensional space without explicitly computing the transformed feature vectors.
-• Kernel selection: Choose an appropriate kernel function based on the nature of the data and the problem at hand. Common kernel functions include linear, polynomial, radial basis function (RBF), and sigmoid.
-• Training: The SVM algorithm solves an optimization problem to find the hyperplane that maximizes the margin while minimizing classification errors. The optimization process involves solving a quadratic programming problem or employing efficient optimization techniques.
-• Prediction: Once the SVM model is trained, it can make predictions on new, unseen data points by evaluating which side of the decision boundary they fall on. The class label is assigned based on the side of the boundary.
 
-Results and Discussion:
-  The results and discussion section presents the findings of the project and discusses their implications. It includes the performance metrics of different algorithms and provides insights into the effectiveness of machine learning in solder fault detection.
-  In this section, we present the results obtained from our solder fault detection system using machine learning techniques on the temperature datasets. The data was divided into three distinct classes: Class ”0”represented golden devices, Class ”1”represented devices with less than 20% fault, and Class ”2”represented devices with greater than 20% fault. These classes were defined based on the severity of the solder joint faults.
-  After inputting the preprocessed data into the Support Vector Machine (SVM) model using PYTORCH, we achieved an accuracy of 67%. The SVM model showed promising performance in distinguishing between different classes of solder joint faults. The accuracy achieved indicates that the model can effectively classify solder joints as golden, slightly faulty, or significantly faulty.
-  To evaluate the generalization capability of the model and test for overfitting, we calculated the validation accuracy after 150 epochs. The validation accuracy was found to be 73%, while the training accuracy stood at 71.7%. This suggests that the model did not overfit the training data and was able to generalize well to unseen data.
-  The simulation dataset is classified into three labels with respect to the junction temperature and fault size percentage of each semiconductor device (datapoint). The fault size percentage is normalized which means that 0.1 in the graph indicates 10% fault size and the junction temperature is calculated as the increase/decrease in the junction temperature of the device of interest from the golden (GLD) device with no faults.
-  The achieved accuracy demonstrates the potential of using machine learning techniques for solder fault detection based on temperature datasets. However, further improvements are necessary to enhance the accuracy and reliability of the system. Several factors could contribute to the observed accuracy, including the quality and representativeness of the dataset, the choice of features, and the selection of the SVM model. One limitation of our study is the availability of labeled data for training and evaluation. 
+Data preparation: Splitting data; standardizing feature values.
+Constructing hyperplane: Finding optimal boundary to separate different classes.
+Margin maximization: Maximizing distance between the boundary and data points.
+Kernel selection: Choosing appropriate kernel functions based on data characteristics.
+Training and Prediction: Solving optimization problems for model training and making predictions.
+This methodology aims to develop models predicting solder fault properties by merging data from real-world measurements and simulations for better accuracy and reliability.
+
+The "Results and Discussion" section showcases findings and implications of the solder fault detection project:
+
+1. Data Classification: Three classes were defined based on solder joint fault severity: "0" for golden devices, "1" for devices with <20% fault, and "2" for devices with >20% fault.
+
+2. SVM Model Performance:
+   - Using PYTORCH with preprocessed data, achieved 67% accuracy in classifying solder joint faults.
+   - Demonstrated effective classification among golden, slightly faulty, and significantly faulty joints.
+   - Validation accuracy after 150 epochs was 73%, while training accuracy stood at 71.7%, indicating good generalization and no overfitting.
+
+3. Simulation Dataset:
+   - Classified into three labels based on junction temperature and fault size percentage.
+   - Fault size percentage is normalized, with 0.1 representing 10% fault size.
+   - Junction temperature reflects deviation from the golden device's temperature.
+
+4. Implications and Limitations:
+   - Highlights the potential of machine learning for solder fault detection using temperature datasets.
+   - Acknowledges the need for further improvements to enhance accuracy and reliability.
+   - Factors affecting accuracy include dataset quality, feature choice, and model selection.
+   - Limited availability of labeled data for training and evaluation is a study limitation.
   
 ![image](https://github.com/HEERAJ24/ML_fault_detection/assets/77336089/4f4bc10b-3d9d-4d42-88d6-1b1a0c4fb017)
 
-  Obtaining accurately labeled datasets for solder fault detection can be challenging, as it requires expert knowledge and manual inspection. This limitation could have influenced the accuracy achieved in our study. Therefore, efforts should be made to collect more comprehensive and accurately labeled datasets to improve the performance of the model.
-  Furthermore, the choice of features used in the model can significantly impact the accuracy of solder fault detection. In this study, we utilized temperature datasets as the main feature for classification. However, exploring additional features such as thermal gradients or time-series analysis could potentially enhance the detection capabilities of the system. 
-  In terms of computational performance, the SVM model demonstrated reasonable efficiency. The training and validation process was completed within a reasonable timeframe, indicating the feasibility of implementing the system in real-time or near-real-time applications. 
-  The evaluation of the SVM model’s performance indicates the need to assess the presence of overfitting. Overfitting occurs when a model excessively learns the noise and specific patterns in the training data, leading to suboptimal generalization to unseen data. While it is commonly suggested that a difference of 20% between the training and validation accuracy can indicate potential overfitting, it is important to consider additional factors for a comprehensive analysis.
-  In our study, we examined the training and validation accuracy metrics of the SVM model to assess overfitting. We observed a difference of 20% between the two accuracy values, which raises a possibility of overfitting. However, it is crucial to conduct further investigations and consider additional evaluation techniques, such as cross-validation and learning curves, to confirm the presence of overfitting.
+  Summary:
+
+1. Labeled Dataset Challenges:
+   - Obtaining accurately labeled datasets for solder fault detection is challenging, impacting accuracy due to the need for expert knowledge and manual inspection.
+   - Improvement requires comprehensive and accurately labeled datasets to enhance model performance.
+
+2. Feature Choice and Exploration:
+   - Utilizing temperature datasets for classification was pivotal, but exploring additional features like thermal gradients or time-series analysis could boost detection capabilities.
+
+3. Computational Efficiency:
+   - The SVM model showed reasonable computational efficiency, suggesting feasibility for real-time or near-real-time applications.
+
+4. Overfitting Concerns:
+   - Evaluation revealed a 20% difference between training and validation accuracy in the SVM model, hinting at potential overfitting.
+   - Recommends further exploration using additional evaluation techniques like cross-validation and learning curves to confirm overfitting presence.
   
   ![image](https://github.com/HEERAJ24/ML_fault_detection/assets/77336089/9e9803ef-aa46-43c7-889d-653ddd80a646)
 
-  To facilitate enhanced visualization and gain insights into the relationships between variables, we employed a correlation matrix. The correlation matrix is a valuable tool that displays the correlation coefficients between different features in the dataset. By examining these coefficients, we can identify strong positive or negative associations between variables. In our project, the correlation matrix played a vital role in understanding the interdependencies and potential collinearity among the variables, thus enhancing the visualization and interpretation of the dataset. While a 20% difference between the training and validation accuracy suggests the potential presence of overfitting in the SVM model, further analysis is necessary to confirm this. Additionally, the correlation matrix proved valuable in visualizing the relationships between variables, contributing to a deeper understanding of the dataset.
-  Our results demonstrate the potential of machine learning techniques, specifically SVM, for solder fault detection using temperature datasets. The achieved accuracy provides a foundation for further improvements in feature selection, dataset quality, and model optimization. By addressing these factors, we can enhance the accuracy and reliability of the system, contributing to the advancement of quality control in electronic manufacturing. 
-  The performance of the random forest classifier was assessed using both simulated and real device data. The simulated data was categorized into three classes based on junction temperature and fault percentage, aiming for an even distribution of samples among the classes. Here is the breakdown of the data distribution:
-  Number of samples in class ”0”: 2164 Number of samples in class ”1”: 1531 Number of samples in class ”2”: 2654 
-  Upon evaluating the model’s performance with the simulated data, an overall accuracy of 91.57% was achieved. The training set demonstrated a high accuracy of 99.7%, while the validation set showed a slightly lower accuracy of 94.7%. These results indicate that the model effectively learned and mapped the patterns present in the simulated data without exhibiting signs of overfitting.
-  However, when the same model was tested with real device data, a significant drop in accuracy was observed, plummeting to only 10%. This stark contrast suggests that the simulated data does not accurately capture the complexities and challenges encountered in real device data. Real device data tends to exhibit a more intricate and diverse nature, making it significantly more challenging to map using the knowledge acquired from the simulated data alone.
-  The substantial decrease in accuracy highlights the limitations of relying solely on simulated data for model training and testing. It underscores the necessity of incorporating real-world data, with its inherent complexities and variations, to develop robust and reliable models that can effectively handle the challenges encountered in practical scenarios. 
-  In summary, while the random forest classifier demonstrated impressive performance with the simulated data, achieving high accuracy and avoiding overfitting, its performance drastically deteriorated when tested with real device data. This emphasizes the importance of incorporating real-world data to ensure the model’s ability to generalize and handle the complexities of practical applications.
+  Summary:
+
+1. Correlation Matrix Analysis:
+   - Utilized correlation matrix to visualize relationships between variables and identify potential collinearity, aiding in understanding dataset interdependencies.
+
+2. SVM Model Insights:
+   - 20% difference in training and validation accuracy suggests potential overfitting in the SVM model, requiring further confirmation.
+   - Acknowledged the correlation matrix's role in deepening the dataset understanding.
+
+3. Machine Learning Performance - Random Forest Classifier:
+   - Achieved high accuracy (91.57%) using simulated data categorizing three classes based on temperature and fault percentage.
+   - Real device data testing resulted in a significant accuracy drop to 10%, highlighting the limitations of simulated data.
+   - Emphasized the necessity of incorporating real-world data for robust model development due to its complexities and variations.
+
+4. Conclusion:
+   - While the random forest classifier excelled with simulated data, its performance faltered with real device data, emphasizing the need for real-world data inclusion for robustness in practical applications.
   
   ![image](https://github.com/HEERAJ24/ML_fault_detection/assets/77336089/4644f52b-3d03-4c04-84e7-4c65106c02c7)
 
