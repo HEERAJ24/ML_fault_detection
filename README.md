@@ -99,24 +99,24 @@ The "Results and Discussion" section showcases findings and implications of the 
   The results obtained from our solder fault detection system using Scikit-learn library on the temperature datasets are discussed below.
 
 Decision Tree Classifier:
-• Data preparation: Prepare the dataset by encoding categorical variables and splitting it into a feature matrix X and a corresponding target vector y, where X contains the input features and y contains the corresponding class labels.
-• Tree building: The algorithm starts with the entire dataset at the root node of the tree. It evaluates different features and splits the data into subsets based on the feature that provides the most significant information gain. The process continues recursively for each subset, creating child nodes and splitting the data until a stopping criterion is met.
-• Stopping criteria: The tree-growing process stops when one of the following conditions is met:
-– All data points in a node belong to the same class, so there is no need for further
-splitting.
-– The maximum depth of the tree is reached.
-– The number of data points in a node falls below a predefined threshold.
-– The improvement in impurity or information gain is below a specified threshold.
-• Handling categorical and continuous features: The algorithm can handle both categorical and continuous features. For categorical features, it evaluates each possible value as a potential split. For continuous features, it tries different threshold values to find the optimal split.
-• Classification at leaf nodes: Once the tree is built, each leaf node is assigned a class label based on the majority class of the training samples in that node. During training, it can also store additional information, such as class probabilities.
-• Prediction: To make predictions on new, unseen data, the algorithm traverses the decision tree by evaluating the feature tests at each internal node. It follows the appropriate branch based on the feature values of the input data until it reaches a leaf node, which provides the predicted class label for the input.
 
+Dataset preparation involves encoding categorical variables and splitting it into features (X) and corresponding class labels (y).
+Tree building: The algorithm splits data recursively based on significant information gain until stopping criteria are met.
+Handles categorical and continuous features by evaluating all possible values or threshold splits.
+Leaf nodes are labeled based on the majority class of training samples.
+Prediction is done by traversing the tree based on feature values to reach a leaf node for the predicted class label.
 Support Vector Machines (SVM):
-• Data preparation: Prepare the dataset by splitting it into a feature matrix X and a corresponding target vector y, where X contains the input features and y contains the corresponding class labels.
-• Feature standardization: Standardize the feature values to ensure that each feature contributes equally to the SVM training process. This step involves scaling the features to have zero mean and unit variance.
-• Hyperplane construction: The algorithm aims to find an optimal hyperplane that maximally separates the data points of different classes. The hyperplane is defined as the decision boundary that best separates the classes in the feature space.
-• Margin maximization: SVM seeks to maximize the margin, which is the distance between the decision boundary and the closest data points from each class. The points that lie on the margin are called support vectors, as they define the position and orientation of the decision boundary.
-• Kernel trick: The SVM algorithm can handle nonlinear decision boundaries by transforming the input features into a higher-dimensional feature space using a kernel function. This transformation allows the algorithm to implicitly operate in a highdimensional space without explicitly computing the transformed feature vectors.
-• Kernel selection: Choose an appropriate kernel function based on the nature of the data and the problem at hand. Common kernel functions include linear, polynomial, radial basis function (RBF), and sigmoid.
-• Training: The SVM algorithm solves an optimization problem to find the hyperplane that maximizes the margin while minimizing classification errors.
-• Prediction: Once the SVM model is trained, it can make predictions on new, unseen data points by evaluating which side of the decision boundary they fall on. The class label is assigned based on the side of the boundary.
+
+Dataset preparation involves splitting data into features (X) and corresponding class labels (y).
+Feature standardization is used for consistent feature contribution.
+Constructs a hyperplane to separate different class data points in feature space.
+Maximizes margin, distance between decision boundary and nearest data points from each class.
+Utilizes kernel functions for nonlinear decision boundaries in higher-dimensional space.
+Training optimizes for a hyperplane that maximizes margin and minimizes classification errors.
+Prediction assigns class labels based on data point positioning relative to the decision boundary.
+These techniques showcase different methodologies in handling the solder fault detection problem using decision trees and SVMs. The Decision Tree Classifier utilizes recursive splits based on information gain, while SVM focuses on finding an optimal hyperplane for data separation in feature space. Both methods have distinct characteristics suited for classification tasks and offer unique insights into solder fault detection.
+
+
+
+
+
