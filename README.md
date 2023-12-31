@@ -1,5 +1,5 @@
-Title: Automated Solder Fault Detection in Electronic Manufacturing Using ML Techniques
-
+Title: **Automated Solder Fault Detection in Electronic Manufacturing Using ML Techniques
+**
 Abstract:
 Machine learning (ML) is revolutionizing electronic manufacturing's quality control. Our paper explores an ML-based automated solder fault detection system using PyTorch, scikit-learn, and TensorFlow. We analyze various ML algorithms such as random forest, neural network, and support vector machines for effective fault detection. Our findings emphasize ML's potential in enhancing manufacturing, ensuring high-quality products, and increasing customer satisfaction.
 
